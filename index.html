@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Web Pertamaku</title>
+
+  <!-- CSS -->
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      text-align: center;
+    }
+
+    header {
+      background: rgba(0,0,0,0.4);
+      padding: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    main {
+      padding: 30px;
+    }
+
+    button {
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background: #00e5ff;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    button:hover {
+      background: #00bcd4;
+    }
+
+    .card {
+      background: rgba(0,0,0,0.5);
+      padding: 20px;
+      margin: 20px auto;
+      width: 80%;
+      max-width: 400px;
+      border-radius: 12px;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 14px;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    🚀 Web Pertama Raffa
+  </header>
+
+  <main>
+    <div class="card">
+      <h2>Halo Dunia 🌍</h2>
+      <p>Ini website pertamaku. Dibuat umur 13 tahun 😈</p>
+      <button onclick="halo()">Klik Aku</button>
+    </div>
+
+    <div class="card">
+      <h3>Jam Sekarang ⏰</h3>
+      <p id="jam">--:--:--</p>
+    </div>
+  </main>
+
+  <footer>
+    © 2026 - Belajar Coding Pemula
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    function halo() {
+      alert("🔥 Web kamu BERHASIL jalan! Lanjutkan belajar 🚀");
+    }
+
+    function updateJam() {
+      const sekarang = new Date();
+      let jam = sekarang.getHours();
+      let menit = sekarang.getMinutes();
+      let detik = sekarang.getSeconds();
+
+      jam = jam < 10 ? "0" + jam : jam;
+      menit = menit < 10 ? "0" + menit : menit;
+      detik = detik < 10 ? "0" + detik : detik;
+
+      document.getElementById("jam").innerHTML =
+        jam + ":" + menit + ":" + detik;
+    }
+
+    setInterval(updateJam, 1000);
+    updateJam();
+  </script>
+
+</body>
+</html>
