@@ -2,100 +2,169 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Rafz Web</title>
+  <title>Rafz | Website Pertama</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    :root {
-      --bg: #0f2027;
-      --card: rgba(0,0,0,0.5);
-      --text: white;
-      --accent: #00e5ff;
-    }
-
-    body.light {
-      --bg: #f2f2f2;
-      --card: white;
-      --text: #111;
-      --accent: #007acc;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
     }
 
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      transition: 0.3s;
+      background: #050505;
+      color: white;
+      overflow-x: hidden;
     }
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 20px;
-      background: rgba(0,0,0,0.4);
-    }
-
-    nav button {
-      padding: 8px 14px;
-      border: none;
-      border-radius: 6px;
-      background: var(--accent);
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    main {
-      padding: 30px;
+    /* NEON TITLE */
+    .neon {
       text-align: center;
+      margin-top: 100px;
+      font-size: 48px;
+      color: #00ffff;
+      text-shadow:
+        0 0 5px #00ffff,
+        0 0 10px #00ffff,
+        0 0 20px #00ffff,
+        0 0 40px #00ffff;
+    }
+
+    /* HAMBURGER */
+    .menu-btn {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      font-size: 26px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    /* MENU PANEL */
+    .menu {
+      position: fixed;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      background: #0a0a0a;
+      padding: 30px;
+      transition: 0.6s ease;
+      z-index: 1000;
+      box-shadow: 0 10px 30px rgba(0,255,255,0.2);
+    }
+
+    .menu.active {
+      top: 0;
+    }
+
+    .menu p {
+      margin: 15px 0;
+      font-size: 18px;
+      opacity: 0.9;
+    }
+
+    /* CONTENT */
+    .content {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 20px;
+      text-align: center;
+      animation: fadeIn 1.5s ease;
     }
 
     .card {
-      background: var(--card);
-      padding: 20px;
-      border-radius: 12px;
-      max-width: 400px;
-      margin: 20px auto;
+      background: rgba(0,255,255,0.05);
+      border: 1px solid rgba(0,255,255,0.2);
+      border-radius: 15px;
+      padding: 25px;
+      margin-top: 30px;
+    }
+
+    .card h2 {
+      margin-bottom: 10px;
+      color: #00ffff;
+    }
+
+    .coming {
+      margin-top: 40px;
+      font-size: 20px;
+      color: #00ffff;
+      animation: blink 1.5s infinite;
+    }
+
+    footer {
+      margin: 40px 0;
+      font-size: 14px;
+      opacity: 0.6;
+      text-align: center;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0.3; }
+      100% { opacity: 1; }
     }
   </style>
 </head>
 
 <body>
 
-  <nav>
-    <div>🚀 Rafz Web</div>
-    <button onclick="toggleMode()">Dark / Light</button>
-  </nav>
+  <!-- MENU BUTTON -->
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
 
-  <main>
+  <!-- MENU -->
+  <div class="menu" id="menu">
+    <p><strong>Tentang Dev</strong></p>
+    <p>Nama: Rafz</p>
+    <p>Status: Pelajar kelas 8</p>
+    <p>Umur: 13 tahun</p>
+    <p>Minat: Web Development</p>
+  </div>
+
+  <!-- TITLE -->
+  <div class="neon">R A F Z</div>
+
+  <!-- CONTENT -->
+  <div class="content">
     <div class="card">
-      <h2>Halo Dunia 🌍</h2>
-      <p>Website online pertamaku 😈</p>
-      <button onclick="halo()">Klik Aku</button>
+      <h2>Selamat Datang 👋</h2>
+      <p>
+        Selamat datang di website pertama saya.  
+        Website ini saya buat sebagai langkah awal saya belajar dunia web dan teknologi.
+        Ke depannya website ini akan terus saya upgrade dengan fitur dan tampilan yang lebih keren
+        serta bermanfaat.
+      </p>
     </div>
 
     <div class="card">
-      <h3>Jam Sekarang ⏰</h3>
-      <p id="jam">--:--:--</p>
+      <h2>Tentang Saya</h2>
+      <p>
+        Saya adalah siswa kelas 8 berusia 13 tahun.  
+        Saya tertarik membuat website karena menurut saya itu adalah hal yang keren
+        dan menantang. Website ini adalah awal perjalanan saya di dunia digital.
+      </p>
     </div>
-  </main>
+
+    <div class="coming">🚧 COMING SOON 🚧</div>
+  </div>
+
+  <footer>
+    © <span id="year"></span> Rafz — Website Pertama
+  </footer>
 
   <script>
-    function halo() {
-      alert("🔥 Kamu makin jago coding!");
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("active");
     }
 
-    function updateJam() {
-      const d = new Date();
-      document.getElementById("jam").innerHTML =
-        d.toLocaleTimeString();
-    }
-
-    setInterval(updateJam, 1000);
-    updateJam();
-
-    function toggleMode() {
-      document.body.classList.toggle("light");
-    }
+    document.getElementById("year").innerText = new Date().getFullYear();
   </script>
 
 </body>
