@@ -11,19 +11,16 @@ function showPage(id) {
   menu.style.display = "none";
 }
 
-/* KALKULATOR */
+/* Kalkulator */
 let calc = "";
-
-function press(val) {
-  calc += val;
+function press(v) {
+  calc += v;
   document.getElementById("calcDisplay").value = calc;
 }
-
 function clearCalc() {
   calc = "";
   document.getElementById("calcDisplay").value = "";
 }
-
 function calculate() {
   try {
     calc = eval(calc).toString();
@@ -33,23 +30,22 @@ function calculate() {
   }
 }
 
-/* JAM */
-function updateClock() {
-  const now = new Date();
+/* Jam */
+function clock() {
   document.getElementById("clock").innerText =
-    "🕒 " + now.toLocaleTimeString("id-ID");
+    "🕒 " + new Date().toLocaleTimeString("id-ID");
 }
-setInterval(updateClock, 1000);
-updateClock();
+setInterval(clock, 1000);
+clock();
 
-/* BATERAI */
+/* Baterai */
 if (navigator.getBattery) {
-  navigator.getBattery().then(battery => {
-    function updateBattery() {
+  navigator.getBattery().then(b => {
+    function up() {
       document.getElementById("battery").innerText =
-        "🔋 Baterai: " + Math.round(battery.level * 100) + "%";
+        "🔋 Baterai: " + Math.round(b.level * 100) + "%";
     }
-    updateBattery();
-    battery.addEventListener("levelchange", updateBattery);
+    up();
+    b.addEventListener("levelchange", up);
   });
 }

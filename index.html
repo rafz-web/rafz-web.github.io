@@ -9,6 +9,12 @@
 </head>
 <body>
 
+<!-- INTRO -->
+<div id="intro">
+  <h1>RAFZ</h1>
+  <p>Website pertama saya</p>
+</div>
+
 <header>
   <div class="menu-btn" onclick="toggleMenu()">☰</div>
   <h1 class="logo">RAFZ</h1>
@@ -27,10 +33,9 @@
   <h2>Selamat Datang 👋</h2>
   <p>
     Ini adalah website pertama saya.<br>
-    Saya membuat website ini untuk belajar dan berkembang.<br>
-    Ke depannya website ini akan terus di-upgrade dan dibuat lebih bermanfaat.
+    Website ini akan terus dikembangkan dan di-upgrade.<br>
+    Terima kasih sudah berkunjung.
   </p>
-
   <p id="clock"></p>
   <p id="battery"></p>
 </section>
@@ -38,16 +43,15 @@
 <section id="facts" class="page">
   <h2>Fakta Menarik</h2>
   <ul>
-    <li>Petir lebih panas dari permukaan matahari</li>
-    <li>Otak manusia lebih aktif saat malam hari</li>
-    <li>Air bisa mendidih di suhu berbeda</li>
+    <li>Petir lebih panas dari matahari</li>
+    <li>Otak manusia lebih aktif di malam hari</li>
+    <li>Gurita punya 3 jantung</li>
   </ul>
 </section>
 
 <section id="calculator" class="page">
   <h2>Kalkulator</h2>
   <input type="text" id="calcDisplay" disabled>
-
   <div class="calc">
     <button onclick="press('7')">7</button>
     <button onclick="press('8')">8</button>
@@ -75,19 +79,22 @@
   <h2>Data Developer</h2>
   <p>
     Nama: Rafz<br>
-    Status: Pelajar kelas 8<br>
     Umur: 13 tahun<br>
-    Minat: Web Development
-  </p>
-
-  <p>
-    Versi Website: <b>v1.0</b><br>
-    Status: Stabil ✅
+    Status: Pelajar kelas 8<br>
+    Fokus: Web Development<br>
+    Versi: <b>v2.0 (PWA)</b>
   </p>
 </section>
 
 </main>
 
 <script src="app.js"></script>
+
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
+}
+</script>
+
 </body>
 </html>
