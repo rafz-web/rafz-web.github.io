@@ -1,0 +1,21 @@
+{
+  "name": "Rafz Facts",
+  "short_name": "Rafz",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#00fff7",
+  "description": "Website fakta buatan Rafz, pelajar kelas 8.",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
