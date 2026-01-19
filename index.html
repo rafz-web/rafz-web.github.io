@@ -2,12 +2,86 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Web Pertama Rafz</title>
+  <title>Rafz Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1 style="color:lime;font-size:40px">
-    WEB PERTAMA RAFZ BERHASIL 🎉
-  </h1>
-  <p>Kalau ini muncul, berarti sudah BENAR.</p>
+
+<!-- HEADER -->
+<header>
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  <h1 class="logo">RAFZ</h1>
+</header>
+
+<!-- MENU -->
+<nav id="menu">
+  <button onclick="showPage('home')">Home</button>
+  <button onclick="showPage('facts')">Fakta</button>
+  <button onclick="showPage('calculator')">Kalkulator</button>
+  <button onclick="showPage('dev')">Data Dev</button>
+</nav>
+
+<!-- CONTENT -->
+<main>
+
+<section id="home" class="page active">
+  <h2>Selamat Datang 👋</h2>
+  <p>
+    Ini adalah website pertama saya.<br>
+    Website ini akan terus saya upgrade seiring waktu.<br>
+    Terima kasih sudah berkunjung.
+  </p>
+</section>
+
+<section id="facts" class="page">
+  <h2>Fakta Menarik</h2>
+  <ul>
+    <li>Otak manusia lebih aktif saat malam hari</li>
+    <li>Air bisa mendidih di suhu berbeda tergantung tekanan</li>
+    <li>Petir lebih panas dari matahari</li>
+  </ul>
+</section>
+
+<section id="calculator" class="page">
+  <h2>Kalkulator</h2>
+  <input type="text" id="calcDisplay" disabled>
+  <div class="calc">
+    <button onclick="press('7')">7</button>
+    <button onclick="press('8')">8</button>
+    <button onclick="press('9')">9</button>
+    <button onclick="press('/')">÷</button>
+
+    <button onclick="press('4')">4</button>
+    <button onclick="press('5')">5</button>
+    <button onclick="press('6')">6</button>
+    <button onclick="press('*')">×</button>
+
+    <button onclick="press('1')">1</button>
+    <button onclick="press('2')">2</button>
+    <button onclick="press('3')">3</button>
+    <button onclick="press('-')">−</button>
+
+    <button onclick="press('0')">0</button>
+    <button onclick="clearCalc()">C</button>
+    <button onclick="calculate()">=</button>
+    <button onclick="press('+')">+</button>
+  </div>
+</section>
+
+<section id="dev" class="page">
+  <h2>Data Developer</h2>
+  <p>
+    Nama: Rafz<br>
+    Status: Pelajar kelas 8<br>
+    Umur: 13 tahun<br>
+    Minat: Web Development
+  </p>
+</section>
+
+</main>
+
+<script src="app.js"></script>
 </body>
 </html>
