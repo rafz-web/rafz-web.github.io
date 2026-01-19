@@ -11,7 +11,7 @@ function showPage(id) {
   menu.style.display = "none";
 }
 
-/* ===== KALKULATOR ===== */
+/* KALKULATOR */
 let calc = "";
 
 function press(val) {
@@ -29,6 +29,27 @@ function calculate() {
     calc = eval(calc).toString();
     document.getElementById("calcDisplay").value = calc;
   } catch {
-    alert("Perhitungan error");
+    alert("Error");
   }
+}
+
+/* JAM */
+function updateClock() {
+  const now = new Date();
+  document.getElementById("clock").innerText =
+    "🕒 " + now.toLocaleTimeString("id-ID");
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+/* BATERAI */
+if (navigator.getBattery) {
+  navigator.getBattery().then(battery => {
+    function updateBattery() {
+      document.getElementById("battery").innerText =
+        "🔋 Baterai: " + Math.round(battery.level * 100) + "%";
+    }
+    updateBattery();
+    battery.addEventListener("levelchange", updateBattery);
+  });
 }

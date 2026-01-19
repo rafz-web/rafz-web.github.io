@@ -9,13 +9,11 @@
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
   <div class="menu-btn" onclick="toggleMenu()">☰</div>
   <h1 class="logo">RAFZ</h1>
 </header>
 
-<!-- MENU -->
 <nav id="menu">
   <button onclick="showPage('home')">Home</button>
   <button onclick="showPage('facts')">Fakta</button>
@@ -23,30 +21,33 @@
   <button onclick="showPage('dev')">Data Dev</button>
 </nav>
 
-<!-- CONTENT -->
 <main>
 
 <section id="home" class="page active">
   <h2>Selamat Datang 👋</h2>
   <p>
     Ini adalah website pertama saya.<br>
-    Website ini akan terus saya upgrade seiring waktu.<br>
-    Terima kasih sudah berkunjung.
+    Saya membuat website ini untuk belajar dan berkembang.<br>
+    Ke depannya website ini akan terus di-upgrade dan dibuat lebih bermanfaat.
   </p>
+
+  <p id="clock"></p>
+  <p id="battery"></p>
 </section>
 
 <section id="facts" class="page">
   <h2>Fakta Menarik</h2>
   <ul>
+    <li>Petir lebih panas dari permukaan matahari</li>
     <li>Otak manusia lebih aktif saat malam hari</li>
-    <li>Air bisa mendidih di suhu berbeda tergantung tekanan</li>
-    <li>Petir lebih panas dari matahari</li>
+    <li>Air bisa mendidih di suhu berbeda</li>
   </ul>
 </section>
 
 <section id="calculator" class="page">
   <h2>Kalkulator</h2>
   <input type="text" id="calcDisplay" disabled>
+
   <div class="calc">
     <button onclick="press('7')">7</button>
     <button onclick="press('8')">8</button>
@@ -77,6 +78,11 @@
     Status: Pelajar kelas 8<br>
     Umur: 13 tahun<br>
     Minat: Web Development
+  </p>
+
+  <p>
+    Versi Website: <b>v1.0</b><br>
+    Status: Stabil ✅
   </p>
 </section>
 
