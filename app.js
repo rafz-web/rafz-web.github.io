@@ -11,23 +11,10 @@ function showPage(id) {
   menu.style.display = "none";
 }
 
-/* Kalkulator */
-let calc = "";
-function press(v) {
-  calc += v;
-  document.getElementById("calcDisplay").value = calc;
-}
-function clearCalc() {
-  calc = "";
-  document.getElementById("calcDisplay").value = "";
-}
-function calculate() {
-  try {
-    calc = eval(calc).toString();
-    document.getElementById("calcDisplay").value = calc;
-  } catch {
-    alert("Error");
-  }
+/* Theme */
+function switchTheme() {
+  document.body.classList.toggle("light");
+  document.body.classList.toggle("dark");
 }
 
 /* Jam */
@@ -49,3 +36,26 @@ if (navigator.getBattery) {
     b.addEventListener("levelchange", up);
   });
 }
+
+/* Kalkulator */
+let calc = "";
+function press(v){ calc+=v; calcDisplay.value=calc; }
+function clearCalc(){ calc=""; calcDisplay.value=""; }
+function calculate(){
+  try{ calc=eval(calc).toString(); calcDisplay.value=calc; }
+  catch{ alert("Error"); }
+}
+
+/* 100 FAKTA */
+const facts = [];
+for(let i=1;i<=100;i++){
+  facts.push("Fakta ke-"+i+": Dunia menyimpan banyak hal menarik untuk dipelajari.");
+}
+
+const factsList = document.getElementById("factsList");
+facts.forEach(f=>{
+  const div=document.createElement("div");
+  div.className="fact-card";
+  div.innerText=f;
+  factsList.appendChild(div);
+});

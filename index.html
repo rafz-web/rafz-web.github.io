@@ -2,29 +2,29 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Rafz Website</title>
+  <title>RAFZ FACTS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="dark">
 
 <!-- INTRO -->
 <div id="intro">
   <h1>RAFZ</h1>
-  <p>Website pertama saya</p>
+  <p>Facts • Learn • Explore</p>
 </div>
 
 <header>
   <div class="menu-btn" onclick="toggleMenu()">☰</div>
-  <h1 class="logo">RAFZ</h1>
+  <h1 class="logo">RAFZ FACTS</h1>
 </header>
 
 <nav id="menu">
   <button onclick="showPage('home')">Home</button>
   <button onclick="showPage('facts')">Fakta</button>
   <button onclick="showPage('calculator')">Kalkulator</button>
-  <button onclick="showPage('dev')">Data Dev</button>
+  <button onclick="showPage('dev')">Developer</button>
 </nav>
 
 <main>
@@ -32,26 +32,26 @@
 <section id="home" class="page active">
   <h2>Selamat Datang 👋</h2>
   <p>
-    Ini adalah website pertama saya.<br>
-    Website ini akan terus dikembangkan dan di-upgrade.<br>
-    Terima kasih sudah berkunjung.
+    Ini adalah website fakta buatan Rafz.<br>
+    Dibuat untuk belajar, berbagi, dan berkembang.<br>
+    Website ini akan terus di-update dengan fitur baru.
   </p>
+
+  <button class="theme-btn" onclick="switchTheme()">Ganti Tema</button>
+
   <p id="clock"></p>
   <p id="battery"></p>
 </section>
 
 <section id="facts" class="page">
-  <h2>Fakta Menarik</h2>
-  <ul>
-    <li>Petir lebih panas dari matahari</li>
-    <li>Otak manusia lebih aktif di malam hari</li>
-    <li>Gurita punya 3 jantung</li>
-  </ul>
+  <h2>100+ Fakta Menarik</h2>
+  <div id="factsList" class="facts-grid"></div>
 </section>
 
 <section id="calculator" class="page">
   <h2>Kalkulator</h2>
   <input type="text" id="calcDisplay" disabled>
+
   <div class="calc">
     <button onclick="press('7')">7</button>
     <button onclick="press('8')">8</button>
@@ -76,25 +76,24 @@
 </section>
 
 <section id="dev" class="page">
-  <h2>Data Developer</h2>
+  <h2>Developer</h2>
   <p>
     Nama: Rafz<br>
     Umur: 13 tahun<br>
     Status: Pelajar kelas 8<br>
-    Fokus: Web Development<br>
-    Versi: <b>v2.0 (PWA)</b>
+    Project: RAFZ FACTS<br>
+    Versi: <b>v3.0</b><br>
+    Fokus: Edukasi & Web Development
   </p>
 </section>
 
 </main>
 
 <script src="app.js"></script>
-
 <script>
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("service-worker.js");
 }
 </script>
-
 </body>
 </html>
