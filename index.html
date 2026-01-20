@@ -1,92 +1,75 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rafz Web v4</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fakta 100+ | V4.0</title>
 
-<link rel="manifest" href="manifest.json">
-<link rel="stylesheet" href="style.css">
-
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0f172a">
 </head>
+
 <body>
-
-<header>
-  <div class="menu-btn" onclick="toggleMenu()">☰</div>
-  <div class="title">RAFZ WEB v4</div>
-</header>
-
-<nav id="menu">
-  <button onclick="openPage('home')">Home</button>
-  <button onclick="openPage('facts')">Fakta</button>
-  <button onclick="openPage('calc')">Kalkulator</button>
-  <button onclick="openPage('dev')">Data Dev</button>
-</nav>
-
-<!-- HOME -->
-<section id="home" class="active">
-  <h2>Selamat Datang 👋</h2>
-  <p>
-    Ini adalah website pertama saya.<br>
-    Website ini akan terus di-upgrade seiring saya belajar.<br>
-    Terima kasih sudah berkunjung 🙌
-  </p>
-</section>
-
-<!-- FAKTA -->
-<section id="facts">
-  <h2>Fakta Menarik</h2>
-  <div class="filter">
-    <button onclick="loadFacts('dunia')">🌍 Dunia</button>
-    <button onclick="loadFacts('sains')">🧠 Sains</button>
-    <button onclick="loadFacts('tech')">🎮 Teknologi</button>
-    <button onclick="loadFacts('tubuh')">🧬 Tubuh</button>
-    <button onclick="loadFacts('angkasa')">🌌 Angkasa</button>
+  <!-- LOADING INTRO -->
+  <div id="intro">
+    <h1>FAKTA 100+</h1>
+    <p>Explore • Learn • Upgrade</p>
   </div>
-  <div id="factList"></div>
-</section>
 
-<!-- KALKULATOR -->
-<section id="calc">
-  <h2>Kalkulator</h2>
-  <div class="calc">
-    <input id="res" disabled>
-    <button onclick="add('7')">7</button>
-    <button onclick="add('8')">8</button>
-    <button onclick="add('9')">9</button>
-    <button onclick="add('/')">÷</button>
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo">FAKTA 100+</div>
+    <div class="menu" id="menuBtn">☰</div>
+  </nav>
 
-    <button onclick="add('4')">4</button>
-    <button onclick="add('5')">5</button>
-    <button onclick="add('6')">6</button>
-    <button onclick="add('*')">×</button>
-
-    <button onclick="add('1')">1</button>
-    <button onclick="add('2')">2</button>
-    <button onclick="add('3')">3</button>
-    <button onclick="add('-')">−</button>
-
-    <button onclick="add('0')">0</button>
-    <button onclick="add('.')">.</button>
-    <button onclick="calc()">=</button>
-    <button onclick="add('+')">+</button>
-
-    <button onclick="clr()">C</button>
+  <!-- SIDEBAR -->
+  <div id="sidebar">
+    <a href="#home">Home</a>
+    <a href="#fakta">Fakta</a>
+    <a href="#tentang">Tentang</a>
   </div>
-</section>
 
-<!-- DEV -->
-<section id="dev">
-  <h2>Data Developer</h2>
-  <div class="card">
-    <b>Nama:</b> Rafz<br>
-    <b>Umur:</b> 13 tahun<br>
-    <b>Status:</b> Pelajar kelas 8<br>
-    <b>Minat:</b> Web & Teknologi<br><br>
-    Website ini adalah proyek belajar dan akan terus dikembangkan.
-  </div>
-</section>
+  <!-- HOME -->
+  <section id="home">
+    <h2>Selamat Datang 👋</h2>
+    <p>
+      Website ini dibuat oleh pelajar kelas 8 yang sedang belajar coding.<br><br>
+      Website ini berisi fakta menarik dari berbagai kategori dan akan terus
+      di-update seiring waktu dan peningkatan skill developer.<br><br>
+      Terima kasih sudah berkunjung 🙌
+    </p>
 
-<script src="app.js"></script>
+    <div id="clock"></div>
+  </section>
+
+  <!-- FAKTA -->
+  <section id="fakta">
+    <h2>Fakta Acak</h2>
+    <select id="kategori">
+      <option value="acak">Acak</option>
+      <option value="dunia">Dunia</option>
+      <option value="sains">Sains</option>
+      <option value="tech">Teknologi</option>
+      <option value="tubuh">Tubuh</option>
+      <option value="angkasa">Angkasa</option>
+    </select>
+
+    <button onclick="tampilkanFakta()">Tampilkan Fakta</button>
+    <div id="hasil"></div>
+  </section>
+
+  <!-- TENTANG -->
+  <section id="tentang">
+    <h2>Developer</h2>
+    <p>
+      Nama: Raffa Arvansyah<br>
+      Versi: V4.0 Public<br>
+      Dibuat: 2026<br>
+      Status: Active Development
+    </p>
+  </section>
+
+  <script src="app.js"></script>
 </body>
 </html>
