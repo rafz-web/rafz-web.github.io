@@ -1,99 +1,92 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <title>RAFZ FACTS</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body class="dark">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rafz Web v4</title>
 
-<!-- INTRO -->
-<div id="intro">
-  <h1>RAFZ</h1>
-  <p>Facts • Learn • Explore</p>
-</div>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
 
 <header>
   <div class="menu-btn" onclick="toggleMenu()">☰</div>
-  <h1 class="logo">RAFZ FACTS</h1>
+  <div class="title">RAFZ WEB v4</div>
 </header>
 
 <nav id="menu">
-  <button onclick="showPage('home')">Home</button>
-  <button onclick="showPage('facts')">Fakta</button>
-  <button onclick="showPage('calculator')">Kalkulator</button>
-  <button onclick="showPage('dev')">Developer</button>
+  <button onclick="openPage('home')">Home</button>
+  <button onclick="openPage('facts')">Fakta</button>
+  <button onclick="openPage('calc')">Kalkulator</button>
+  <button onclick="openPage('dev')">Data Dev</button>
 </nav>
 
-<main>
-
-<section id="home" class="page active">
+<!-- HOME -->
+<section id="home" class="active">
   <h2>Selamat Datang 👋</h2>
   <p>
-    Ini adalah website fakta buatan Rafz.<br>
-    Dibuat untuk belajar, berbagi, dan berkembang.<br>
-    Website ini akan terus di-update dengan fitur baru.
+    Ini adalah website pertama saya.<br>
+    Website ini akan terus di-upgrade seiring saya belajar.<br>
+    Terima kasih sudah berkunjung 🙌
   </p>
-
-  <button class="theme-btn" onclick="switchTheme()">Ganti Tema</button>
-
-  <p id="clock"></p>
-  <p id="battery"></p>
 </section>
 
-<section id="facts" class="page">
-  <h2>100+ Fakta Menarik</h2>
-  <div id="factsList" class="facts-grid"></div>
+<!-- FAKTA -->
+<section id="facts">
+  <h2>Fakta Menarik</h2>
+  <div class="filter">
+    <button onclick="loadFacts('dunia')">🌍 Dunia</button>
+    <button onclick="loadFacts('sains')">🧠 Sains</button>
+    <button onclick="loadFacts('tech')">🎮 Teknologi</button>
+    <button onclick="loadFacts('tubuh')">🧬 Tubuh</button>
+    <button onclick="loadFacts('angkasa')">🌌 Angkasa</button>
+  </div>
+  <div id="factList"></div>
 </section>
 
-<section id="calculator" class="page">
+<!-- KALKULATOR -->
+<section id="calc">
   <h2>Kalkulator</h2>
-  <input type="text" id="calcDisplay" disabled>
-
   <div class="calc">
-    <button onclick="press('7')">7</button>
-    <button onclick="press('8')">8</button>
-    <button onclick="press('9')">9</button>
-    <button onclick="press('/')">÷</button>
+    <input id="res" disabled>
+    <button onclick="add('7')">7</button>
+    <button onclick="add('8')">8</button>
+    <button onclick="add('9')">9</button>
+    <button onclick="add('/')">÷</button>
 
-    <button onclick="press('4')">4</button>
-    <button onclick="press('5')">5</button>
-    <button onclick="press('6')">6</button>
-    <button onclick="press('*')">×</button>
+    <button onclick="add('4')">4</button>
+    <button onclick="add('5')">5</button>
+    <button onclick="add('6')">6</button>
+    <button onclick="add('*')">×</button>
 
-    <button onclick="press('1')">1</button>
-    <button onclick="press('2')">2</button>
-    <button onclick="press('3')">3</button>
-    <button onclick="press('-')">−</button>
+    <button onclick="add('1')">1</button>
+    <button onclick="add('2')">2</button>
+    <button onclick="add('3')">3</button>
+    <button onclick="add('-')">−</button>
 
-    <button onclick="press('0')">0</button>
-    <button onclick="clearCalc()">C</button>
-    <button onclick="calculate()">=</button>
-    <button onclick="press('+')">+</button>
+    <button onclick="add('0')">0</button>
+    <button onclick="add('.')">.</button>
+    <button onclick="calc()">=</button>
+    <button onclick="add('+')">+</button>
+
+    <button onclick="clr()">C</button>
   </div>
 </section>
 
-<section id="dev" class="page">
-  <h2>Developer</h2>
-  <p>
-    Nama: Rafz<br>
-    Umur: 13 tahun<br>
-    Status: Pelajar kelas 8<br>
-    Project: RAFZ FACTS<br>
-    Versi: <b>v3.0</b><br>
-    Fokus: Edukasi & Web Development
-  </p>
+<!-- DEV -->
+<section id="dev">
+  <h2>Data Developer</h2>
+  <div class="card">
+    <b>Nama:</b> Rafz<br>
+    <b>Umur:</b> 13 tahun<br>
+    <b>Status:</b> Pelajar kelas 8<br>
+    <b>Minat:</b> Web & Teknologi<br><br>
+    Website ini adalah proyek belajar dan akan terus dikembangkan.
+  </div>
 </section>
 
-</main>
-
 <script src="app.js"></script>
-<script>
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("service-worker.js");
-}
-</script>
 </body>
 </html>
