@@ -2,34 +2,35 @@
 const menuBtn = document.getElementById("menuBtn");
 const menu = document.getElementById("menu");
 
-menuBtn.onclick = () => {
-  menu.classList.toggle("hidden");
-};
+if (menuBtn) {
+  menuBtn.onclick = () => {
+    menu.classList.toggle("hidden");
+  };
+}
 
 // JAM
-function updateClock() {
-  const now = new Date();
-  document.getElementById("clock").innerText =
-    now.toLocaleTimeString();
+const clock = document.getElementById("clock");
+if (clock) {
+  setInterval(() => {
+    clock.innerText = new Date().toLocaleTimeString();
+  }, 1000);
 }
-setInterval(updateClock, 1000);
-updateClock();
 
-// FAKTA
-const fakta = [
-  "Otak manusia lebih aktif saat malam hari.",
-  "Gurita punya tiga jantung.",
-  "Madu tidak pernah basi.",
-  "Kucing bisa mengenali suara pemiliknya.",
-  "Indonesia punya lebih dari 17.000 pulau."
-];
+// KALKULATOR
+let display = document.getElementById("display");
 
-document.getElementById("btnFakta").onclick = () => {
-  const random = Math.floor(Math.random() * fakta.length);
-  document.getElementById("faktaBox").innerText = fakta[random];
-};
+function press(value) {
+  display.value += value;
+}
 
-// PWA
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("sw.js");
+function clearDisplay() {
+  display.value = "";
+}
+
+function calculate() {
+  try {
+    display.value = eval(display.value);
+  } catch {
+    display.value = "Error";
+  }
 }
