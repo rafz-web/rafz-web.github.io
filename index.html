@@ -1,75 +1,61 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fakta 100+ | V4.0</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fakta 100+ | Rafz</title>
 
   <link rel="stylesheet" href="style.css">
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#0f172a">
 </head>
 
 <body>
-  <!-- LOADING INTRO -->
-  <div id="intro">
-    <h1>FAKTA 100+</h1>
-    <p>Explore • Learn • Upgrade</p>
-  </div>
 
-  <!-- NAVBAR -->
-  <nav>
-    <div class="logo">FAKTA 100+</div>
-    <div class="menu" id="menuBtn">☰</div>
-  </nav>
+<!-- HEADER -->
+<header>
+  <h1>FAKTA 100+</h1>
+  <button id="menuBtn">☰</button>
+</header>
 
-  <!-- SIDEBAR -->
-  <div id="sidebar">
-    <a href="#home">Home</a>
-    <a href="#fakta">Fakta</a>
-    <a href="#tentang">Tentang</a>
-  </div>
+<!-- MENU -->
+<nav id="menu" class="hidden">
+  <a href="#home">Home</a>
+  <a href="#fakta">Fakta</a>
+  <a href="#developer">Developer</a>
+</nav>
 
-  <!-- HOME -->
-  <section id="home">
-    <h2>Selamat Datang 👋</h2>
-    <p>
-      Website ini dibuat oleh pelajar kelas 8 yang sedang belajar coding.<br><br>
-      Website ini berisi fakta menarik dari berbagai kategori dan akan terus
-      di-update seiring waktu dan peningkatan skill developer.<br><br>
-      Terima kasih sudah berkunjung 🙌
-    </p>
+<!-- HOME -->
+<section id="home" class="card">
+  <h2>Selamat Datang 👋</h2>
+  <p>
+    Website ini dibuat oleh pelajar kelas 8 yang sedang belajar coding.
+    Berisi fakta menarik dan akan terus dikembangkan.
+  </p>
+  <p>Terima kasih sudah berkunjung 🙌</p>
 
-    <div id="clock"></div>
-  </section>
+  <div id="jam" class="jam">00:00:00</div>
+</section>
 
-  <!-- FAKTA -->
-  <section id="fakta">
-    <h2>Fakta Acak</h2>
-    <select id="kategori">
-      <option value="acak">Acak</option>
-      <option value="dunia">Dunia</option>
-      <option value="sains">Sains</option>
-      <option value="tech">Teknologi</option>
-      <option value="tubuh">Tubuh</option>
-      <option value="angkasa">Angkasa</option>
-    </select>
+<!-- FAKTA -->
+<section id="fakta" class="card">
+  <h2>Fakta Acak</h2>
 
-    <button onclick="tampilkanFakta()">Tampilkan Fakta</button>
-    <div id="hasil"></div>
-  </section>
+  <button id="btnFakta">Tampilkan Fakta</button>
+  <div id="faktaBox" class="faktaBox">Klik tombol untuk melihat fakta</div>
+</section>
 
-  <!-- TENTANG -->
-  <section id="tentang">
-    <h2>Developer</h2>
-    <p>
-      Nama: Raffa Arvansyah<br>
-      Versi: V4.0 Public<br>
-      Dibuat: 2026<br>
-      Status: Active Development
-    </p>
-  </section>
+<!-- DEVELOPER -->
+<section id="developer" class="card">
+  <h2>Developer</h2>
+  <ul>
+    <li>Nama: Raffa Arvansyah</li>
+    <li>Status: Pelajar Kelas 8</li>
+    <li>Versi: V4.0 Public</li>
+    <li>Dibuat: 2026</li>
+    <li>Status Web: Active Development</li>
+  </ul>
+</section>
 
-  <script src="app.js"></script>
+<script src="app.js"></script>
 </body>
 </html>

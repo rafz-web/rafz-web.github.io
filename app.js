@@ -1,58 +1,31 @@
-// SIDEBAR
+// MENU ☰
 const menuBtn = document.getElementById("menuBtn");
-const sidebar = document.getElementById("sidebar");
-let open = false;
+const menu = document.getElementById("menu");
 
-menuBtn.onclick = () => {
-  open = !open;
-  sidebar.style.left = open ? "0" : "-200px";
-};
+menuBtn.addEventListener("click", () => {
+  menu.classList.toggle("hidden");
+});
 
 // JAM DIGITAL
-function updateClock(){
+function updateJam() {
   const now = new Date();
-  const h = String(now.getHours()).padStart(2,'0');
-  const m = String(now.getMinutes()).padStart(2,'0');
-  const s = String(now.getSeconds()).padStart(2,'0');
-  document.getElementById("clock").innerText = `${h}:${m}:${s}`;
+  const jam = now.toLocaleTimeString();
+  document.getElementById("jam").innerText = jam;
 }
-setInterval(updateClock,1000);
-updateClock();
+setInterval(updateJam, 1000);
+updateJam();
 
-// DATA FAKTA
-const fakta = {
-  dunia:[
-    "Antartika adalah gurun terbesar.",
-    "Indonesia punya 17.000+ pulau."
-  ],
-  sains:[
-    "Otak manusia punya 86 miliar neuron.",
-    "Tubuh manusia 60% air."
-  ],
-  tech:[
-    "Smartphone lebih kuat dari komputer NASA 1969.",
-    "Internet awalnya proyek militer."
-  ],
-  tubuh:[
-    "Jantung berdetak 100 ribu kali per hari.",
-    "Kulit adalah organ terbesar."
-  ],
-  angkasa:[
-    "Tidak ada suara di luar angkasa.",
-    "Cahaya matahari butuh 8 menit ke bumi."
-  ]
-};
+// FAKTA
+const faktaList = [
+  "Otak manusia lebih aktif saat malam hari.",
+  "Petir lebih panas dari permukaan matahari.",
+  "Gurita punya tiga jantung.",
+  "Pisang termasuk buah berry.",
+  "Lebah bisa mengenali wajah manusia.",
+  "Air panas bisa membeku lebih cepat dari air dingin."
+];
 
-function tampilkanFakta(){
-  const kategori = document.getElementById("kategori").value;
-  let list = [];
-
-  if(kategori === "acak"){
-    Object.values(fakta).forEach(a => list = list.concat(a));
-  } else {
-    list = fakta[kategori];
-  }
-
-  const random = list[Math.floor(Math.random()*list.length)];
-  document.getElementById("hasil").innerText = random;
-}
+document.getElementById("btnFakta").addEventListener("click", () => {
+  const random = Math.floor(Math.random() * faktaList.length);
+  document.getElementById("faktaBox").innerText = faktaList[random];
+});

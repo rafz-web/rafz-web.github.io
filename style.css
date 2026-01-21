@@ -1,88 +1,71 @@
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial, Helvetica, sans-serif;
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-body{
-  background:#0f172a;
-  color:white;
+body {
+  margin: 0;
+  background: #0b1220;
+  color: white;
 }
 
-/* INTRO */
-#intro{
-  position:fixed;
-  inset:0;
-  background:black;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  z-index:999;
-  animation:fadeOut 3s forwards;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: #0f172a;
 }
 
-@keyframes fadeOut{
-  0%{opacity:1}
-  80%{opacity:1}
-  100%{opacity:0;visibility:hidden}
+#menuBtn {
+  font-size: 24px;
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
-/* NAVBAR */
-nav{
-  display:flex;
-  justify-content:space-between;
-  padding:15px;
-  background:#020617;
+nav {
+  background: #020617;
+  padding: 10px;
 }
 
-.menu{
-  cursor:pointer;
-  font-size:24px;
+nav a {
+  display: block;
+  color: cyan;
+  text-decoration: none;
+  padding: 8px 0;
 }
 
-/* SIDEBAR */
-#sidebar{
-  position:fixed;
-  left:-200px;
-  top:0;
-  width:200px;
-  height:100%;
-  background:#020617;
-  padding-top:60px;
-  transition:0.3s;
+.hidden {
+  display: none;
 }
 
-#sidebar a{
-  display:block;
-  padding:15px;
-  color:white;
-  text-decoration:none;
+.card {
+  background: #020617;
+  margin: 15px;
+  padding: 15px;
+  border-radius: 10px;
 }
 
-/* SECTION */
-section{
-  padding:30px;
+.jam {
+  font-size: 22px;
+  color: cyan;
+  margin-top: 10px;
 }
 
-#clock{
-  margin-top:20px;
-  font-size:22px;
-  color:cyan;
+button {
+  background: cyan;
+  color: black;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-/* BUTTON */
-button{
-  margin-top:15px;
-  padding:10px 15px;
-  background:cyan;
-  border:none;
-  cursor:pointer;
-}
-
-#hasil{
-  margin-top:20px;
-  padding:15px;
-  background:#020617;
+.faktaBox {
+  margin-top: 10px;
+  padding: 10px;
+  background: #0f172a;
+  border-radius: 5px;
 }
