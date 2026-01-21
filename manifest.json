@@ -1,8 +1,9 @@
 {
-  "name": "Fakta 100+",
-  "short_name": "Fakta",
+  "name": "FAKTA 100+",
+  "short_name": "FAKTA",
   "start_url": "index.html",
   "display": "standalone",
-  "background_color": "#0f172a",
-  "theme_color": "#0f172a"
+  "background_color": "#020617",
+  "theme_color": "#00f5ff",
+  "icons": []
 }

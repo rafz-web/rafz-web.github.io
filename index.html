@@ -1,60 +1,53 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Fakta 100+ | Rafz</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAKTA 100+</title>
 
   <link rel="stylesheet" href="style.css">
   <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#00f5ff">
 </head>
-
 <body>
 
 <!-- HEADER -->
-<header>
-  <h1>FAKTA 100+</h1>
+<header class="header">
+  <div class="logo">FAKTA 100+</div>
   <button id="menuBtn">☰</button>
 </header>
 
 <!-- MENU -->
-<nav id="menu" class="hidden">
+<nav id="menu" class="menu hidden">
   <a href="#home">Home</a>
   <a href="#fakta">Fakta</a>
-  <a href="#developer">Developer</a>
+  <a href="#dev">Developer</a>
 </nav>
 
-<!-- HOME -->
-<section id="home" class="card">
-  <h2>Selamat Datang 👋</h2>
-  <p>
-    Website ini dibuat oleh pelajar kelas 8 yang sedang belajar coding.
-    Berisi fakta menarik dan akan terus dikembangkan.
-  </p>
-  <p>Terima kasih sudah berkunjung 🙌</p>
+<!-- MAIN -->
+<main>
 
-  <div id="jam" class="jam">00:00:00</div>
+<section id="home">
+  <h1>Selamat Datang 👋</h1>
+  <p>Website ini dibuat oleh pelajar kelas 8 yang sedang belajar coding.</p>
+  <p>Berisi fakta menarik dan akan terus di-update.</p>
+  <p id="clock">--:--:--</p>
 </section>
 
-<!-- FAKTA -->
-<section id="fakta" class="card">
+<section id="fakta">
   <h2>Fakta Acak</h2>
-
   <button id="btnFakta">Tampilkan Fakta</button>
-  <div id="faktaBox" class="faktaBox">Klik tombol untuk melihat fakta</div>
+  <div id="faktaBox"></div>
 </section>
 
-<!-- DEVELOPER -->
-<section id="developer" class="card">
+<section id="dev">
   <h2>Developer</h2>
-  <ul>
-    <li>Nama: Raffa Arvansyah</li>
-    <li>Status: Pelajar Kelas 8</li>
-    <li>Versi: V4.0 Public</li>
-    <li>Dibuat: 2026</li>
-    <li>Status Web: Active Development</li>
-  </ul>
+  <p>Nama: Raffa Arvansyah</p>
+  <p>Versi: V4.0 Stable</p>
+  <p>Status: Active Development</p>
 </section>
+
+</main>
 
 <script src="app.js"></script>
 </body>
