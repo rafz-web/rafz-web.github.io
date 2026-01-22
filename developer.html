@@ -3,21 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <title>Developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="topbar">
-  <a href="index.html" class="back">←</a>
-  <h1>Developer</h1>
+<header class="header">
+  <div class="logo">Developer</div>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
 </header>
 
+<nav id="menu" class="menu hidden">
+  <a href="index.html">Home</a>
+  <a href="calculator.html">Kalkulator</a>
+  <a href="developer.html">Developer</a>
+</nav>
+
 <main class="content">
-  <p><b>Nama:</b> Raffa Arvansyah</p>
-  <p><b>Versi:</b> V4.0</p>
-  <p><b>Tipe:</b> Progressive Web App</p>
-  <p><b>Status:</b> Stabil</p>
+  <h2>Data Developer</h2>
+  <ul>
+    <li>Nama: Raffa Arvansyah</li>
+    <li>Status: Pelajar Kelas 8</li>
+    <li>Target: Fullstack Developer</li>
+    <li>Versi Web: Stabil 1.0</li>
+  </ul>
 </main>
 
+<script src="app.js"></script>
 </body>
 </html>

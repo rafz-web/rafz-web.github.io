@@ -2,30 +2,36 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>PWA V4 – Home</title>
+  <title>Rafz Web</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <script defer src="app.js"></script>
 </head>
 <body>
 
-<header class="topbar">
-  <button class="menu-btn" onclick="toggleMenu()">☰</button>
-  <h1>PWA V4</h1>
+<header class="header">
+  <div class="logo">Rafz Web</div>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
 </header>
 
-<nav id="sideMenu" class="side-menu">
-  <a href="index.html">🏠 Home</a>
-  <a href="calculator.html">🧮 Kalkulator</a>
-  <a href="developer.html">👨‍💻 Developer</a>
+<nav id="menu" class="menu hidden">
+  <a href="index.html">Home</a>
+  <a href="calculator.html">Kalkulator</a>
+  <a href="developer.html">Developer</a>
 </nav>
 
 <main class="content">
-  <h2>Selamat Datang 👋</h2>
+  <h1>Selamat Datang 👋</h1>
   <p>
-    Ini adalah PWA versi <b>V4</b> yang stabil.<br>
-    Semua fitur dipisah rapi, anti error, dan siap dikembangkan.
+    Website ini dibuat oleh pelajar kelas 8 yang sedang belajar coding.
+    Fokus website ini adalah belajar bertahap, stabil, dan berkembang.
+  </p>
+
+  <p>
+    Tidak semua fitur harus canggih.
+    Yang penting: <b>jalan, rapi, dan bisa dipahami</b>.
   </p>
 </main>
 
+<script src="app.js"></script>
 </body>
 </html>

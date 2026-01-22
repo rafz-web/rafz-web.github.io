@@ -3,48 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <title>Kalkulator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <script defer src="app.js"></script>
 </head>
 <body>
 
-<header class="topbar">
-  <button class="menu-btn" onclick="toggleMenu()">☰</button>
-  <h1>Kalkulator</h1>
+<header class="header">
+  <div class="logo">Kalkulator</div>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
 </header>
 
-<nav id="sideMenu" class="side-menu">
-  <a href="index.html">🏠 Home</a>
-  <a href="calculator.html">🧮 Kalkulator</a>
-  <a href="developer.html">👨‍💻 Developer</a>
+<nav id="menu" class="menu hidden">
+  <a href="index.html">Home</a>
+  <a href="calculator.html">Kalkulator</a>
+  <a href="developer.html">Developer</a>
 </nav>
 
-<div class="calculator">
-  <input type="text" id="display" disabled>
+<div class="calc-box">
+  <input id="display" readonly>
 
   <div class="buttons">
+    <button onclick="add('7')">7</button>
+    <button onclick="add('8')">8</button>
+    <button onclick="add('9')">9</button>
+    <button class="op" onclick="add('/')">÷</button>
+
+    <button onclick="add('4')">4</button>
+    <button onclick="add('5')">5</button>
+    <button onclick="add('6')">6</button>
+    <button class="op" onclick="add('*')">×</button>
+
+    <button onclick="add('1')">1</button>
+    <button onclick="add('2')">2</button>
+    <button onclick="add('3')">3</button>
+    <button class="op" onclick="add('-')">−</button>
+
+    <button onclick="add('0')">0</button>
     <button onclick="clearDisplay()">C</button>
-    <button onclick="append('/')">÷</button>
-    <button onclick="append('*')">×</button>
-    <button onclick="append('-')">−</button>
-
-    <button onclick="append('7')">7</button>
-    <button onclick="append('8')">8</button>
-    <button onclick="append('9')">9</button>
-    <button onclick="append('+')">+</button>
-
-    <button onclick="append('4')">4</button>
-    <button onclick="append('5')">5</button>
-    <button onclick="append('6')">6</button>
-
-    <button onclick="append('1')">1</button>
-    <button onclick="append('3')">3</button>
-    <button onclick="append('4')">4</button>
-
-    <button onclick="append('0')" class="zero">0</button>
-    <button onclick="calculate()" class="equal">=</button>
+    <button class="equal" onclick="calculate()">=</button>
+    <button class="op" onclick="add('+')">+</button>
   </div>
 </div>
 
+<script src="app.js"></script>
 </body>
 </html>

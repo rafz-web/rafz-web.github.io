@@ -1,29 +1,20 @@
 function toggleMenu() {
-  const menu = document.getElementById("sideMenu");
-  if (!menu) return;
-
-  menu.style.left =
-    menu.style.left === "0px" ? "-220px" : "0px";
+  document.getElementById("menu").classList.toggle("hidden");
 }
 
-/* ===== KALKULATOR ===== */
-let display = null;
-document.addEventListener("DOMContentLoaded", () => {
-  display = document.getElementById("display");
-});
-
-function append(value) {
-  if (display) display.value += value;
+function add(val) {
+  document.getElementById("display").value += val;
 }
 
 function clearDisplay() {
-  if (display) display.value = "";
+  document.getElementById("display").value = "";
 }
 
 function calculate() {
   try {
-    display.value = eval(display.value);
+    document.getElementById("display").value =
+      eval(document.getElementById("display").value);
   } catch {
-    display.value = "Error";
+    alert("Perhitungan salah");
   }
 }
