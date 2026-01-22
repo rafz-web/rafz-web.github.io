@@ -2,36 +2,30 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FAKTA 100+ | Home</title>
+  <title>PWA V4 – Home</title>
   <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
 </head>
 <body>
 
-<header class="header">
-  <div class="logo">FAKTA 100+</div>
-  <div class="hamburger" id="menuBtn">☰</div>
+<header class="topbar">
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+  <h1>PWA V4</h1>
 </header>
 
-<nav class="menu hidden" id="menu">
-  <a href="index.html">Home</a>
-  <a href="kalkulator.html">Kalkulator</a>
-  <a href="developer.html">Developer</a>
+<nav id="sideMenu" class="side-menu">
+  <a href="index.html">🏠 Home</a>
+  <a href="calculator.html">🧮 Kalkulator</a>
+  <a href="developer.html">👨‍💻 Developer</a>
 </nav>
 
-<main>
-  <h1>Selamat Datang 👋</h1>
+<main class="content">
+  <h2>Selamat Datang 👋</h2>
   <p>
-    Ini adalah website pertamaku.<br>
-    Dibuat oleh pelajar kelas 8 yang ingin belajar dunia digital dan coding.
+    Ini adalah PWA versi <b>V4</b> yang stabil.<br>
+    Semua fitur dipisah rapi, anti error, dan siap dikembangkan.
   </p>
-  <p>
-    Website ini akan terus di-upgrade dan dikembangkan menjadi lebih bermanfaat.
-  </p>
-
-  <div class="clock" id="clock"></div>
 </main>
 
-<script src="app.js"></script>
 </body>
 </html>

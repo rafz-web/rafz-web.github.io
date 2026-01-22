@@ -1,20 +1,29 @@
 function toggleMenu() {
-  document.getElementById("menu").classList.toggle("hidden");
+  const menu = document.getElementById("sideMenu");
+  if (!menu) return;
+
+  menu.style.left =
+    menu.style.left === "0px" ? "-220px" : "0px";
 }
 
-function append(val) {
-  document.getElementById("display").value += val;
+/* ===== KALKULATOR ===== */
+let display = null;
+document.addEventListener("DOMContentLoaded", () => {
+  display = document.getElementById("display");
+});
+
+function append(value) {
+  if (display) display.value += value;
 }
 
 function clearDisplay() {
-  document.getElementById("display").value = "";
+  if (display) display.value = "";
 }
 
 function calculate() {
   try {
-    document.getElementById("display").value =
-      eval(document.getElementById("display").value);
+    display.value = eval(display.value);
   } catch {
-    alert("Error perhitungan");
+    display.value = "Error";
   }
 }

@@ -3,50 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <title>Kalkulator</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
 </head>
 <body>
 
-<header class="header">
-  <div class="logo">Kalkulator</div>
-  <div class="hamburger" onclick="toggleMenu()">☰</div>
+<header class="topbar">
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+  <h1>Kalkulator</h1>
 </header>
 
-<nav id="menu" class="menu hidden">
-  <a href="index.html">Home</a>
-  <a href="kalkulator.html">Kalkulator</a>
-  <a href="developer.html">Developer</a>
+<nav id="sideMenu" class="side-menu">
+  <a href="index.html">🏠 Home</a>
+  <a href="calculator.html">🧮 Kalkulator</a>
+  <a href="developer.html">👨‍💻 Developer</a>
 </nav>
 
-<div class="calc-container">
-  <input type="text" id="display" readonly>
+<div class="calculator">
+  <input type="text" id="display" disabled>
 
-  <div class="calc-grid">
-    <button class="op" onclick="clearDisplay()">C</button>
-    <button class="op" onclick="append('/')">÷</button>
-    <button class="op" onclick="append('*')">×</button>
-    <button class="op" onclick="append('-')">−</button>
+  <div class="buttons">
+    <button onclick="clearDisplay()">C</button>
+    <button onclick="append('/')">÷</button>
+    <button onclick="append('*')">×</button>
+    <button onclick="append('-')">−</button>
 
     <button onclick="append('7')">7</button>
     <button onclick="append('8')">8</button>
     <button onclick="append('9')">9</button>
-    <button class="op" onclick="append('+')">+</button>
+    <button onclick="append('+')">+</button>
 
     <button onclick="append('4')">4</button>
     <button onclick="append('5')">5</button>
     <button onclick="append('6')">6</button>
-    <button class="equal" onclick="calculate()">=</button>
 
     <button onclick="append('1')">1</button>
-    <button onclick="append('2')">2</button>
     <button onclick="append('3')">3</button>
+    <button onclick="append('4')">4</button>
 
-    <button class="zero" onclick="append('0')">0</button>
-    <button onclick="append('.')">.</button>
+    <button onclick="append('0')" class="zero">0</button>
+    <button onclick="calculate()" class="equal">=</button>
   </div>
 </div>
 
-<script src="app.js"></script>
 </body>
 </html>

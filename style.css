@@ -4,94 +4,89 @@
 }
 
 body {
-  background: #0b1220;
-  color: white;
   margin: 0;
+  background: #0f172a;
+  color: white;
 }
 
-/* HEADER */
-.header {
-  background: #020617;
-  padding: 15px;
+.topbar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  background: #020617;
+  padding: 10px;
 }
 
-.hamburger {
-  font-size: 26px;
+.menu-btn {
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  margin-right: 10px;
   cursor: pointer;
 }
 
-/* MENU */
-.menu {
+.side-menu {
+  position: fixed;
+  left: -220px;
+  top: 0;
+  width: 200px;
+  height: 100%;
   background: #020617;
-  padding: 10px 15px;
+  padding-top: 60px;
+  transition: 0.3s;
 }
 
-.menu a {
+.side-menu a {
   display: block;
-  color: #00f5ff;
+  padding: 12px;
+  color: white;
   text-decoration: none;
-  padding: 8px 0;
 }
 
-.hidden {
-  display: none;
+.side-menu a:hover {
+  background: #1e293b;
 }
 
-/* KALKULATOR */
-.calc-container {
-  max-width: 320px;
+.content {
+  padding: 20px;
+}
+
+/* ===== KALKULATOR ===== */
+.calculator {
+  width: 260px;
   margin: 30px auto;
   background: #020617;
   padding: 15px;
-  border-radius: 16px;
+  border-radius: 10px;
 }
 
 #display {
   width: 100%;
-  height: 60px;
-  font-size: 26px;
+  height: 50px;
+  font-size: 22px;
   text-align: right;
-  padding: 10px;
-  border: none;
-  border-radius: 10px;
-  margin-bottom: 15px;
-  background: black;
-  color: #00f5ff;
+  margin-bottom: 10px;
 }
 
-.calc-grid {
+.buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  gap: 8px;
 }
 
-.calc-grid button {
-  padding: 18px;
+button {
+  padding: 15px;
   font-size: 18px;
-  border-radius: 50%;
   border: none;
-  background: #1e293b;
-  color: white;
-}
-
-.calc-grid button:active {
-  opacity: 0.7;
-}
-
-.op {
-  background: #0ea5e9;
-}
-
-.equal {
-  background: #22c55e;
-  grid-row: span 2;
-  border-radius: 14px;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
 .zero {
   grid-column: span 2;
-  border-radius: 30px;
+}
+
+.equal {
+  grid-column: span 2;
+  background: #22c55e;
 }
